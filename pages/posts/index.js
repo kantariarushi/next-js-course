@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
 
+import { getMoviesList } from '../../lib/posts-util';
 import AllPosts from '../../components/posts/all-posts';
-import { getAllPosts } from '../../lib/posts-util';
 
 function AllPostsPage(props) {
   return (
@@ -14,17 +14,16 @@ function AllPostsPage(props) {
           content='A list of all programming-related tutorials and posts!'
         />
       </Head>
-      <AllPosts posts={props.posts} />
+      <AllPosts  moviesList={props.stars}/>
     </Fragment>
   );
 }
 
-export function getStaticProps() {
-  const allPosts = getAllPosts();
-
+export async function getStaticProps() {
+  const json = await getMoviesList(); 
   return {
     props: {
-      posts: allPosts,
+      stars: json.d
     },
   };
 }

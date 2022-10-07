@@ -9,8 +9,12 @@ module.exports = (phase) => {
         mongodb_clustername: 'cluster0',
         mongodb_database: 'my-site-dev',
       },
+      images: {
+        domains: ['m.media-amazon.com'],
+      },
     };
   }
+  
 
   return {
     env: {
@@ -18,6 +22,9 @@ module.exports = (phase) => {
       mongodb_password: 'xnhybShvii4R6tuG',
       mongodb_clustername: 'cluster0',
       mongodb_database: 'my-site',
+    },
+    images: {
+      domains: ['m.media-amazon.com'],
     },
   };
 };

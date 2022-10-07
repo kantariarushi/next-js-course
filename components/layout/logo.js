@@ -1,7 +1,7 @@
 import classes from './logo.module.css';
 
 function Logo() {
-  return <div className={classes.logo}>RUSHI' Next Blog</div>;
+  return <div className={classes.logo}>RUSHI' SELECTED MOVIES</div>;
 }
 
 export default Logo;

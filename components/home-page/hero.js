@@ -14,10 +14,6 @@ function Hero() {
         />
       </div>
       <h1>Hi, I'm Rushi</h1>
-      <p>
-        I blog about web development - especially frontend frameworks like
-        Angular or React.
-      </p>
     </section>
   );
 }
