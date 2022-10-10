@@ -10,7 +10,7 @@ module.exports = (phase) => {
         mongodb_database: 'my-site-dev',
       },
       images: {
-        domains: ['m.media-amazon.com', 'encrypted-tbn0.gstatic.com'],
+        domains: ['i.pinimg.com'],
       },
     };
   }
@@ -24,7 +24,7 @@ module.exports = (phase) => {
       mongodb_database: 'my-site',
     },
     images: {
-      domains: ['m.media-amazon.com', 'encrypted-tbn0.gstatic.com'],
+      domains: ['i.pinimg.com'],
     },
   };
 };

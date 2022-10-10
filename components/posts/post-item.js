@@ -14,7 +14,7 @@ function PostItem(props) {
 
   // const imagePath = `/images/posts/${slug}/${image}`;
   // const linkPath = `/posts/${slug}`;
-  console.log("moviesList -=-=-=--=-=-=-=-=->", props.movie);
+  // console.log("props.movie =-=-=--=--=-=-->", props.movie);
   return (
     <li className={classes.post}>
       {/* <Link href={linkPath}> */}
@@ -23,7 +23,7 @@ function PostItem(props) {
             <Image
               src={props.movie.url}
               alt={""}
-              width={300}
+              width={200}
               height={200}
               layout='responsive'
             />
