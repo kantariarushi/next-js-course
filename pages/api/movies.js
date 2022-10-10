@@ -56,21 +56,20 @@ async function handler(req, res) {
       .status(201)
       .json({ message: 'Successfully stored message!', message: newMessage, data: data });
   }
-  if(req.method === 'GET') {
-
-    let client;
+  else {
     let data;
-  
+    let movieClient;
+
     const MovieconnectionString = `mongodb+srv://rushiadmin:RYNcFwzwuhZWEdVz@cluster0.dftdcwi.mongodb.net/Movies?retryWrites=true&w=majority`;
 
     try {
-      client = await MongoClient.connect(MovieconnectionString);
+      movieClient = await MongoClient.connect(MovieconnectionString);
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database.' });
       return;
     }
 
-    const movieDb = client.db();
+    const movieDb = movieClient.db();
     try {
       data = await movieDb.collection('movies').find({}).toArray();
     } catch (error) {

@@ -5,12 +5,12 @@ module.exports = (phase) => {
     return {
       env: {
         mongodb_username: 'rushiadmin',
-        mongodb_password: 'xnhybShvii4R6tuG',
+        mongodb_password: 'RYNcFwzwuhZWEdVz',
         mongodb_clustername: 'cluster0',
         mongodb_database: 'my-site-dev',
       },
       images: {
-        domains: ['m.media-amazon.com'],
+        domains: ['m.media-amazon.com', 'encrypted-tbn0.gstatic.com'],
       },
     };
   }
@@ -19,12 +19,12 @@ module.exports = (phase) => {
   return {
     env: {
       mongodb_username: 'rushiadmin',
-      mongodb_password: 'xnhybShvii4R6tuG',
+      mongodb_password: 'RYNcFwzwuhZWEdVz',
       mongodb_clustername: 'cluster0',
       mongodb_database: 'my-site',
     },
     images: {
-      domains: ['m.media-amazon.com'],
+      domains: ['m.media-amazon.com', 'encrypted-tbn0.gstatic.com'],
     },
   };
 };

@@ -3,12 +3,11 @@ import classes from './posts-grid.module.css';
 
 function PostsGrid(props) {
   const { moviesList } = props;
-
   return (
     <ul className={classes.grid}>
-       {moviesList.map((movie) => (
+       {moviesList?.map((movie) => (
         <PostItem 
-          key={movie.id} 
+          key={movie._id} 
           movie={movie}
         />
       ))}

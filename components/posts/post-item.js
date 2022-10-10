@@ -14,14 +14,14 @@ function PostItem(props) {
 
   // const imagePath = `/images/posts/${slug}/${image}`;
   // const linkPath = `/posts/${slug}`;
-
+  console.log("moviesList -=-=-=--=-=-=-=-=->", props.movie);
   return (
     <li className={classes.post}>
       {/* <Link href={linkPath}> */}
         <a>
           <div className={classes.image}>
             <Image
-              src={props.movie.i.imageUrl}
+              src={props.movie.url}
               alt={""}
               width={300}
               height={200}
@@ -29,8 +29,8 @@ function PostItem(props) {
             />
           </div>
           <div className={classes.content}>
-            <h3>{props.movie.l}</h3>
-            <p>{props.movie.s}</p>
+            <h3>{props.movie.name}</h3>
+            {/* <p>{props.movie.s}</p> */}
           </div>
         </a>
       {/* </Link> */}
