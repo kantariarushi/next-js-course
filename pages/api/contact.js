@@ -23,26 +23,20 @@ async function handler(req, res) {
     };
 
     let client;
-    let data;
-    let movieClient;
-
-    const connectionString = `mongodb+srv://rushiadmin:RYNcFwzwuhZWEdVz@cluster0.dftdcwi.mongodb.net/my-site?retryWrites=true&w=majority`;
-    const MovieconnectionString = `mongodb+srv://rushiadmin:RYNcFwzwuhZWEdVz@cluster0.dftdcwi.mongodb.net/Movies?retryWrites=true&w=majority`;
+    
+    const connectionString = `mongodb+srv://rushiadmin:kzv1vM60Q79MWtIe@cluster0.9tfzvgl.mongodb.net/my-site?retryWrites=true&w=majority`;
 
     try {
       client = await MongoClient.connect(connectionString);
-      movieClient = await MongoClient.connect(MovieconnectionString);
     } catch (error) {
       res.status(500).json({ message: 'Could not connect to database.' });
       return;
     }
 
     const db = client.db();
-    const movieDb = movieClient.db();
     console.log("into the handler =----=-=-=-=->", db)
     try {
       const result = await db.collection('messages').insertOne(newMessage);
-      data = await movieDb.collection('movies').find({}).toArray();
       newMessage.id = result.insertedId;
     } catch (error) {
       client.close();
@@ -54,14 +48,14 @@ async function handler(req, res) {
 
     res
       .status(201)
-      .json({ message: 'Successfully stored message!', message: newMessage, data: data });
+      .json({ message: 'Successfully stored message!', message: newMessage });
   }
   if(req.method === 'GET') {
 
     let client;
     let data;
-  
-    const MovieconnectionString = `mongodb+srv://rushiadmin:RYNcFwzwuhZWEdVz@cluster0.dftdcwi.mongodb.net/Movies?retryWrites=true&w=majority`;
+
+    const MovieconnectionString = `mongodb+srv://rushiadmin:kzv1vM60Q79MWtIe@cluster0.9tfzvgl.mongodb.net/Movies?retryWrites=true&w=majority`;
 
     try {
       client = await MongoClient.connect(MovieconnectionString);
