@@ -24,7 +24,7 @@ async function handler(req, res) {
 
     let client;
     
-    const connectionString = `mongodb+srv://rushiadmin:kzv1vM60Q79MWtIe@cluster0.9tfzvgl.mongodb.net/my-site?retryWrites=true&w=majority`;
+    const connectionString = `mongodb+srv://rushiadmin:2HaAljK2VDkW4MLl@cluster0.dftdcwi.mongodb.net/Movies?retryWrites=true&w=majority`;
 
     try {
       client = await MongoClient.connect(connectionString);
@@ -55,7 +55,7 @@ async function handler(req, res) {
     let client;
     let data;
 
-    const MovieconnectionString = `mongodb+srv://rushiadmin:kzv1vM60Q79MWtIe@cluster0.9tfzvgl.mongodb.net/Movies?retryWrites=true&w=majority`;
+    const MovieconnectionString = `mongodb+srv://rushiadmin:2HaAljK2VDkW4MLl@cluster0.dftdcwi.mongodb.net/Movies?retryWrites=true&w=majority`;
 
     try {
       client = await MongoClient.connect(MovieconnectionString);
