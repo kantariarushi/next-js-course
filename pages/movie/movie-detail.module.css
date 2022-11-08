@@ -1,0 +1,35 @@
+.root {
+    margin-top: 20px;
+    margin-left: 50px;
+    display: flex;
+}
+
+.detailBox {
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    color: whitesmoke;
+}
+
+.detail {
+    font-size: 24px;
+    color: white;
+}
+
+.image {
+    width: 20%;
+    max-height: 100rem;
+    overflow: hidden;
+  }
+
+.videoPlayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin-left: 50px;
+}

@@ -2,11 +2,15 @@ import { MongoClient } from 'mongodb';
 
 async function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, url } = req.body;
+    const { name, url, imdb, movieType, movieDescription, trailerUrl } = req.body;
 
     if (
       !name ||
       !url ||
+      !imdb ||
+      !movieType ||
+      !movieDescription||
+      !trailerUrl ||
       name.trim() === ''
     ) {
       res.status(422).json({ message: 'Invalid input.' });
@@ -23,6 +27,10 @@ async function handler(req, res) {
     const newMessage = {
       name,
       url,
+      imdb,
+      movieType,
+      movieDescription,
+      trailerUrl
     };
 
     let client;

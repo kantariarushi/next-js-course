@@ -13,12 +13,11 @@ function PostItem(props) {
   // });
 
   // const imagePath = `/images/posts/${slug}/${image}`;
-  // const linkPath = `/posts/${slug}`;
-  // console.log("props.movie =-=-=--=--=-=-->", props.movie);
+  const linkPath = `/movie/${props.movie.name}`;
   return (
     <li className={classes.post}>
-      {/* <Link href={linkPath}> */}
-        <a>
+      <Link href={linkPath}>
+        <div className={classes.root}>
           <div className={classes.image}>
             <Image
               src={props.movie.url}
@@ -32,8 +31,8 @@ function PostItem(props) {
             <h3>{props.movie.name}</h3>
             {/* <p>{props.movie.s}</p> */}
           </div>
-        </a>
-      {/* </Link> */}
+          </div>
+      </Link>
     </li>
   );
 }

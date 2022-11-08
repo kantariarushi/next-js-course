@@ -13,9 +13,9 @@ function MainNavigation() {
       </Link>
       <nav>
         <ul>
-          <li>
+          {/* <li>
             <Link href='/posts'>All Movies</Link>
-          </li>
+          </li> */}
           <li>
             <Link href='/contact'>Contact</Link>
           </li>

@@ -20,6 +20,7 @@
 
 .content {
   padding: var(--size-4);
+  background-color: aliceblue;
 }
 
 .content h3 {
@@ -34,4 +35,8 @@
 
 .content p {
   line-height: var(--size-6);
+}
+
+.root {
+  cursor: pointer;
 }

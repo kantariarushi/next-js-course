@@ -22,6 +22,10 @@ async function sendContactData(contactDetails) {
 function ContactForm() {
   const [enteredMovieName, setEnteredMovieName] = useState('');
   const [enteredUrl, setEnteredUrl] = useState('');
+  const [IMDBRating, setIMDBRating] = useState(undefined);
+  const [movieType, setMovieType] = useState('');
+  const [movieDescription, setMovieDescription] = useState('');
+  const [trailerUrl, setTrailerUrl] = useState('')
   const [requestStatus, setRequestStatus] = useState(); // 'pending', 'success', 'error'
   const [requestError, setRequestError] = useState();
 
@@ -46,11 +50,19 @@ function ContactForm() {
     try {
       await sendContactData({
         name: enteredMovieName,
-        url: enteredUrl
+        url: enteredUrl,
+        imdb: IMDBRating,
+        movieType: movieType,
+        movieDescription: movieDescription,
+        trailerUrl: trailerUrl
       });
       setRequestStatus('success');
       setEnteredMovieName('');
       setEnteredUrl('');
+      setIMDBRating('');
+      setMovieType('')
+      setMovieDescription('')
+      setTrailerUrl('')
     } catch (error) {
       setRequestError(error.message);
       setRequestStatus('error');
@@ -93,19 +105,59 @@ function ContactForm() {
             <input
               type='text'
               id='movie'
-              required
               value={enteredMovieName}
               onChange={(event) => setEnteredMovieName(event.target.value)}
             />
           </div>
           <div className={classes.control}>
-            <label htmlFor='name'>Your url</label>
+            <label htmlFor='name'>Image url</label>
             <input
               type='text'
               id='url'
-              required
               value={enteredUrl}
               onChange={(event) => setEnteredUrl(event.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className={classes.controls}>
+          <div className={classes.control}>
+            <label htmlFor='text'>Enter Movie IMDB Rating</label>
+            <input
+              type='text'
+              id='movie'
+              value={IMDBRating}
+              onChange={(event) => setIMDBRating(event.target.value)}
+            />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor='name'>Enter Movie Type</label>
+            <input
+              type='text'
+              id='url'
+              value={movieType}
+              onChange={(event) => setMovieType(event.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className={classes.controls}>
+          <div className={classes.control}>
+            <label htmlFor='text'>Enter Movie Discription</label>
+            <textarea
+              type="textarea"
+              id='movie'
+              value={movieDescription}
+              onChange={(event) => setMovieDescription(event.target.value)}
+            />
+          </div>
+          <div className={classes.control}>
+            <label htmlFor='text'>Enter the trailer Url</label>
+            <input
+              type="text"
+              id='movie'
+              value={trailerUrl}
+              onChange={(event) => setTrailerUrl(event.target.value)}
             />
           </div>
         </div>
